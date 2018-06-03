@@ -41,3 +41,17 @@ class App extends React.Component {
     );
   }
 }
+
+class UsersList extends React.Component {
+  get users() {
+    return this.props.users.map(user => <User key={user.id} user={user} />);
+  }
+
+  remder() {
+    return (
+      <div>
+      {this.users}
+      </div>
+    );
+  }
+}
