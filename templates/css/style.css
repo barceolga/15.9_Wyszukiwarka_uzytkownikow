@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: beige; }
+  body .app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    body .app .app_form {
+      background-color: #3971ac;
+      min-height: 50px;
+      min-width: 33%;
+      margin: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      body .app .app_form label {
+        font-size: 20px;
+        font-weight: 700;
+        padding: 10px;
+        margin: 10px;
+        color: navy;
+        text-shadow: 1px 1px #fff;
+        background-color: #b3cce6; }
+      body .app .app_form input {
+        background-color: #ffcc80;
+        padding: 10px;
+        margin: 10px;
+        color: #19334d;
+        font-size: 20px;
+        font-weight: 400;
+        font-weight: 600; }
+    body .app .app_users-list {
+      list-style-type: none;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      body .app .app_users-list .app_users-title {
+        text-align: center;
+        font-size: 35px;
+        font-weight: 800;
+        text-transform: capitalize;
+        color: navy;
+        text-shadow: 1px 1px #fff;
+        padding: 15px;
+        margin: 10px;
+        background-color: #b3cce6;
+        border: 3.5px solid  #3971ac; }
+      body .app .app_users-list .app_users-item {
+        margin: 15px; }
+        body .app .app_users-list .app_users-item .app_users-img {
+          margin: auto;
+          width: 130px;
+          height: 130px;
+          background-color: #ffcc80;
+          border: 5px solid #3971ac;
+          display: flex; }
+          body .app .app_users-list .app_users-item .app_users-img img {
+            margin: auto; }
+        body .app .app_users-list .app_users-item .app_users-info, body .app .app_users-list .app_users-item .app_users-link {
+          color: navy;
+          text-shadow: 1px 1px #fff;
+          padding: 10px;
+          font-size: 18px;
+          font-weight: 600;
+          text-align: center; }
+        body .app .app_users-list .app_users-item .app_users-link {
+          color: #19334d;
+          text-shadow: none;
+          transition: 1s;
+          cursor: pointer; }
+          body .app .app_users-list .app_users-item .app_users-link:hover {
+            color: #528cc7; }
