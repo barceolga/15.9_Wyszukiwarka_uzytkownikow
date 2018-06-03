@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: beige;
+  .app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .app_form {
+      background-color: #3971ac;
+      min-height: 50px;
+      min-width: 33%;
+      margin: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      label {
+        font-size: 20px;
+        font-weight: 700;
+        padding: 10px;
+        margin: 10px;
+        color: navy;
+        text-shadow: 1px 1px #fff;
+        background-color: #b3cce6;
+      }
+      input {
+        background-color: #ffcc80;
+        padding: 10px;
+        margin: 10px;
+        color: #19334d;
+        font-size: 20px;
+        font-weight: 400;
+        font-weight: 600;
+      }
+    }
+    .app_users-list{
+      list-style-type: none;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .app_users-title {
+        text-align: center;
+        font-size: 35px;
+        font-weight: 800;
+        text-transform: capitalize;
+        color: navy;
+        text-shadow: 1px 1px #fff;
+        padding: 15px;
+        margin: 10px;
+        background-color: #b3cce6;
+        border: 3.5px solid  #3971ac;
+
+      }
+      .app_users-item{
+        margin: 15px;
+
+        .app_users-img {
+          margin: auto;
+          width: 130px;
+          height: 130px;
+          background-color:  #ffcc80;
+          border: 5px solid #3971ac;
+          display: flex;
+
+          img {
+            margin: auto;
+          }
+        }
+
+        .app_users-info {
+            color: navy;
+            text-shadow: 1px 1px #fff;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .app_users-link {
+          @extend .app_users-info;
+          color: #19334d;
+          text-shadow: none;
+          transition: 1s;
+          cursor: pointer;
+          &:hover{
+            color: #528cc7;
+          }
+        }
+      }
+
+    }
+  }
+}
