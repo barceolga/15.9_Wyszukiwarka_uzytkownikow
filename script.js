@@ -1,7 +1,3 @@
-ReactDOM.render(
-  <App />
-  document.getElementById('root')
-);
 
 class App extends React.Component {
     constructor() {
@@ -9,8 +5,8 @@ class App extends React.Component {
       this.state = {
         searchText: '',
         users: []
-      }
-    };
+      };
+    }
 
   onChangeHandle(event) {
     this.setState({searchText: event.target.value});
@@ -28,7 +24,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-          <form onSubmit={event => this.onSubmit(event)}>
+          <form onSubmit={event => this.onSubmit(event)} className={'app_form'}>
             <label htmlFor="searchText">Search by user name</label>
             <input
              type="text"
@@ -43,26 +39,42 @@ class App extends React.Component {
 }
 
 class UsersList extends React.Component {
+
+
   get users() {
-    return this.props.users.map(user => <User key={user.id} user={user} />);
+    return this.props.users.map(user => <User key={user.id} user={user}/>);
+    console.log(users)
   }
 
-  remder() {
+
+  render() {
     return (
-      <div>
+      <div className={'app_users-list'}>
+      <h1 className={'app_users-title'}> Github users list</h1>
       {this.users}
       </div>
     );
   }
+
 }
 
 class User extends React.Component {
+
   render() {
     return (
-      <div>
+      <div className={'app_users-item'}>
+      <div className={'app_users-img'}>
         <img src={this.props.user.avatar_url} style={{maxWidth: '100px'}} />
-        <a href={this.props.user.html_url} targe="_blank">{this.props.user.login}</a>
+      </div>
+        <h2 className={'app_users-info'}> Find me on:</h2>
+        <a href={this.props.user.html_url} target="_blank" className={'app_users-link'}>{this.props.user.login}</a>
       </div>
     );
   }
+
 }
+
+ReactDOM.render(
+    <App />,
+  document.getElementById('root')
+);
