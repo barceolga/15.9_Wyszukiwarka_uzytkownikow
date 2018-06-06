@@ -40,7 +40,9 @@ var App = function (_React$Component) {
       fetch(url).then(function (response) {
         return response.json();
       }).then(function (responseJson) {
-        return _this2.setState({ users: responseJson.items });
+        return _this2.setState({ users: responseJson.items.sort(function (a, b) {
+            return a.login > b.login ? 1 : b.login > a.login ? -1 : 0;
+          }) });
       });
     }
   }, {
@@ -99,6 +101,7 @@ var UsersList = function (_React$Component2) {
         ),
         this.users
       );
+      console.log(users);
     }
   }, {
     key: 'users',
@@ -106,7 +109,6 @@ var UsersList = function (_React$Component2) {
       return this.props.users.map(function (user) {
         return React.createElement(User, { key: user.id, user: user });
       });
-      console.log(users);
     }
   }]);
 
