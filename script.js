@@ -18,7 +18,9 @@ class App extends React.Component {
       const url = `https://api.github.com/search/users?q=${searchText}`;
       fetch(url)
         .then(response => response.json())
-        .then(responseJson => this.setState({users: responseJson.items}));
+        .then(responseJson => this.setState({users: responseJson.items.sort(function(a,b)
+        {return (a.login > b.login) ? 1 : ((b.login > a.login) ? -1 : 0);})}))
+
   }
 
   render() {
@@ -43,7 +45,6 @@ class UsersList extends React.Component {
 
   get users() {
     return this.props.users.map(user => <User key={user.id} user={user}/>);
-    console.log(users)
   }
 
 
@@ -54,8 +55,9 @@ class UsersList extends React.Component {
       {this.users}
       </div>
     );
+    console.log(users);
   }
-
+ ;
 }
 
 class User extends React.Component {
